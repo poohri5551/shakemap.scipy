@@ -195,7 +195,7 @@
       map.fitBounds(bounds, { padding:[20,20] });
       lastEpicenter = epicenter;
       lastPGAData  = { bounds, epicenter, image_data_url, popup_html, meta };
-      toast(`สำเร็จ: เวลา ${meta?.time_th || '-'}, Mag ${meta?.mag ?? '-'}, ${meta?.changwat || '-'}`);
+      toast(`สำเร็จ: เวลา ${meta?.time_th || '-'}, ${meta?.changwat || '-'}`);
       updateUserMarkerPopup(); drawUserDistanceLine();
     }catch(err){
     console.error(err);
