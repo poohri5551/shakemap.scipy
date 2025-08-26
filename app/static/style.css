@@ -37,7 +37,7 @@ html,body{
 /* Searchbox */
 .searchbox{
   position:left; display:flex; align-items:auto;
-  width:75%; max-width:250px;
+  width:80%; max-width:250px;
   background:#fff;
   border-radius:28px;
   border:1px solid #dadce0;
@@ -54,11 +54,14 @@ html,body{
   padding:12px 14px; font-size:16px;
 }
 .searchbox button{
-  border:0; padding:0 16px; font-weight:600; cursor:pointer;
-  background:var(--prim); color:#fff;
-  border-radius:0 28px 28px 0; min-width:80px;
-  transition:background .18s ease, transform .06s ease;
+  flex: 0 0 auto;          /* << ขนาดคงที่ ติดกับ input เสมอ */
+  border: 0; padding: 0 16px; font-weight: 600; cursor: pointer;
+  background: var(--prim); color: #fff;
+  border-radius:0 28px 28px 0; min-width:80px;       
+  transition: background .18s ease, transform .06s ease;
 }
+
+
 .searchbox button:hover{ background:var(--prim-strong) }
 .searchbox button:active{ transform: translateY(1px) }
 
