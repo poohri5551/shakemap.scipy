@@ -342,7 +342,7 @@ def compute_overlay_from_event(ev: dict):
   วันเวลา: <b>{time_th_fmt} น.</b><br>
   ขนาด: <b>{_fmt_num(mag, 2)}</b><br>
   จุดศูนย์กลาง: <b>{region_text}</b><br>
-  ค่าระดับการสั่นสะเทือนสูงสุด: <b><span style="color:red;">{_fmt_num(pga_max, 3)}</span> %g</b><br>
+  ค่าระดับการสั่นสะเทือนสูงสุด: <b><span style="color:red;">{_fmt_num(pga_max, 4)}</span> %g</b><br>
 </div>
 """.strip()
 
