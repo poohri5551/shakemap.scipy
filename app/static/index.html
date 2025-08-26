@@ -21,24 +21,25 @@
         <button id="searchBtn" title="ค้นหา">ค้นหา</button>
         <ul id="acList" class="ac"></ul>
       </div>
-
-     <!-- ปุ่มตำแหน่งของฉัน -->
-<button id="locateBtn" class="icon-btn" title="ตำแหน่งของฉัน" aria-label="ตำแหน่งของฉัน">
-  <!-- เปลี่ยนเป็นไอคอนคน -->
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  
+    <div class="top-right-buttons">
+  <button id="locateBtn" class="icon-btn" title="ตำแหน่งของฉัน">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
   </svg>
-</button>
-
-
-      <!-- ปุ่มเหตุการณ์ล่าสุด -->
-      <!-- โหลด Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </button>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <!-- ปุ่มเหตุการณ์ล่าสุด -->
 <button id="runBtn" class="icon-btn" title="เหตุการณ์แผ่นดินไหว" aria-label="เหตุการณ์ล่าสุด">
   <i class="fa-solid fa-house-crack"></i>
 </button>
+</div>
+
+
+
+
+
 
 
     </div>
@@ -153,7 +154,7 @@
         const s = Math.floor((Date.now() - _btnStart) / 1000);
         const mm = String(Math.floor(s/60)).padStart(2,'0');
         const ss = String(s%60).padStart(2,'0');
-        btn.textContent = `${mm}:${ss}`;   // <<=== แสดงตัวเลขเวลาอย่างเดียว
+        btn.textContent = `${s}s`;   // <<=== แสดงตัวเลขเวลาอย่างเดียว
     }, 200);
   }else{
       if(_btnTmr){ clearInterval(_btnTmr); _btnTmr = null; }
@@ -446,9 +447,8 @@
       // ป้ายตัวเลข: ซ้าย-กลาง-ขวา (อ่านง่าย ไม่รก)
       const mid = (legend.min + legend.max)/2;
       labels.innerHTML = `
-        <span>${legend.min.toFixed(3)}</span>
-        <span>${mid.toFixed(3)}</span>
-        <span>${legend.max.toFixed(3)}</span>
+        <span><strong>${legend.min.toFixed(4)}</strong></span>
+        <span><strong>${legend.max.toFixed(4)}</strong></span>
       `;
 
       box.style.display = 'block';
