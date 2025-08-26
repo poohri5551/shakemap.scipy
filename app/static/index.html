@@ -247,7 +247,7 @@
           const pgaObj = findNearestPGA(latlng.lat, latlng.lng, 8);
           const pgaVal = (pgaObj && pgaObj.pga>0) ? pgaObj.pga : 0;
           const sev = classifySeverity(pgaVal);
-          popup += `<br><span>ค่าระดับการสั่นสะเทือน : <b class="${sev.className}">${pgaVal.toFixed(3)}</b> %g</span>`;
+          popup += `<br><span>ค่าระดับการสั่นสะเทือน : <b class="${sev.className}">${pgaVal.toFixed(4)}</b> %g</span>`;
           popup += `<br><span class="${sev.className}">ระดับความรุนแรง : ${sev.label}</span>`;
         }
       }
